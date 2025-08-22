@@ -11,8 +11,12 @@ steps:
     displayName: 'Install Node.js'
 
   - script: |
-      npm install
-    displayName: 'Install dependencies'
+      npm ci
+    displayName: 'Clean install dependencies'
+
+  - script: |
+      npx cypress install
+    displayName: 'Install Cypress binary'
 
   - script: |
       npx cypress run
